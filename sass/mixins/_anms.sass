@@ -1,0 +1,38 @@
+
+//animation library
+
+  //How to use
+
+  //way 1 : @include popupBcgFadeIn
+  //way 2 : @include popupBcgFadeIn(.3s, ease-out, 0, 1)
+
+
+
+
+
+
+@mixin popupBcgFadeIn($duration:.3s,$method:ease-out,$delay:0,$count:1)
+  //define view change 
+  @include keyframes(bcgFadeIn)
+    from
+      background: rgba(0,0,0,0)
+  //setting anmation time , etc
+  @include animation(bcgFadeIn,$duration, $method, $delay, $count)
+    
+
+@mixin popupEnter($duration:.3s, $method:ease-out, $delay:0, $count:1)
+  @include keyframes(popupEnter)
+    0%
+      @include transform(scale(0,0))
+  @include animation(popupEnter,.3s,ease-out,0,1)
+
+
+
+@mixin spinnerRotate($duration:1s, $method:ease-out, $delay:0, $count:infinite)
+  @include keyframes(spinnerRotate)
+    from
+      @include transform(rotate(0))
+    to
+      @include transform(rotate(360deg))
+  @include animation(spinnerRotate ,$duration ,$method ,$delay ,$count)
+

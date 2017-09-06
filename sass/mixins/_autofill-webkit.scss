@@ -1,0 +1,31 @@
+/* Use webkit autofill via Tag 
+  use : @include webkit-autofill(input, lightgreen, yellow)
+
+  generate: 
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px lightgreen inset;
+    -webkit-text-fill-color: yellow;
+*/
+
+@mixin webkit-autofill($select, $bcg:lightgreen, $color:#fff){
+  #{$select}:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $bcg inset;
+    -webkit-text-fill-color: $base-font_color;
+  }
+}
+
+/* Use webkit autofill via Class 
+  use : @include webkit-autofill-class(example, lightgreen, yellow)
+
+  generate: 
+  .example:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px lightgreen inset;
+    -webkit-text-fill-color: yellow;
+*/
+
+@mixin webkit-autofill-class($select, $bcg:pink, $color:#fff){
+  .#{$select}:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $bcg inset;
+    -webkit-text-fill-color: $base-font_color;
+  }
+}

@@ -1,0 +1,36 @@
+/* CSS Structure */
+
+/*************************************************
+ 1. Base - initialize css env
+    Vendor - third-party
+*************************************************/
+@import "base/normalize",
+        "base/normalize-extension"; // 每個頁面預設要改的設定，未來的每一個專案都是這樣
+
+/*************************************************
+ 2. Config - no output css, but define lots of rules
+    a. variables (config folder)
+    b. functions (mixins)
+*************************************************/
+@import "config/fonts",
+        "config/colors";
+
+
+@import "mixins/anm-mixins", // 會使用 breakpoints
+        "mixins/autofill-webkit",
+        "mixins/layout-bcg",
+        "mixins/flex",
+        "mixins/anms", // 有設定參數 colors 和使用 mixins
+        "mixins/media-breakpoints"; // rwd breakpoint mixins
+
+/*************************************************
+ 3. Implement OOCSS/ SMACSS/ BEM
+    Layout > Pages > Components
+*************************************************/
+@import "components/popup",
+        "components/spinner";
+
+@import "layout/typography", // 有設定參數 colors ...
+        "layout/grid";
+
+// @import "pages/index";
